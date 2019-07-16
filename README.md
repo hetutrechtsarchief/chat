@@ -1,3 +1,3 @@
 # Chat
 
-!(ASSETS/screenshot.png)[]
+![](ASSETS/screenshot.png)

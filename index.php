@@ -62,7 +62,7 @@
     <li>Sleep dit icoon naar de favorieten balk van je browser en plaats hem erin;
     <div>
      <a style="background-color:#3fbfad;font-family:Arial;color:white;border-radius:3px;padding:4px;margin-left:5px"
-       href="javascript:(function()%7B%24(%22.popup-container%22).remove()%3B%24(%20'%3Cdiv%20class%3D%22popup-container%22%3E%3Ciframe%20src%3D%22https%3A%2F%2Fhualab.nl%2Fchat%2Fonline.html%3F'%2BMath.random()%2B'%22%20width%3D%22370%22%20height%3D%22210%22%3E%3C%2Fiframe%3E%3C%2Fdiv%3E'%20).insertAfter(%20%22%23menu-main%22%20)%3B%24(%22.scroll-help__button%22).hide()%7D)()">
+       href="javascript:(function()%7B%24(%22.popup-container%22).remove()%3B%24(%20'%3Cdiv%20class%3D%22popup-container%22%3E%3Ciframe%20src%3D%22https%3A%2F%2Fhualab.nl%2Fchat%2Fonline.html%3F'%2BMath.random()%2B'%22%20width%3D%22380%22%20height%3D%22210%22%3E%3C%2Fiframe%3E%3C%2Fdiv%3E'%20).insertAfter(%20%22%23menu-main%22%20)%3B%24(%22.scroll-help__button%22).hide()%7D)()">
        Chat
      </a>
     </div>

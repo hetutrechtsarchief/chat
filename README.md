@@ -1,1 +1,3 @@
-# chat
+# Chat
+
+!(ASSETS/screenshot.png)[]

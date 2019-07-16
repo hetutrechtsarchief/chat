@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Het Utrechts Archief</title>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="10; URL=?">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css?">
+</head>
+
+<body>
+  <div class="btnIcon" id="btnChat">
+    <img src="img/icon-chat.png?">
+  </div>
+
+  <div class="content" id="contentChat">
+    <p>Wat fijn dat je ons helpt oefenen met chatten!</p>
+    <a id="linkOpenChatWindow" href="https://eu.libraryh3lp.com/chat/het-utrechts-archief@chat.eu.libraryh3lp.com?skin=15209" target="_blank">
+      <p><img src="status.php"></p>
+      <p class="greenbutton">Stel je vraag &gt;</p>
+    </a>
+  </div>
+
+  <div class="content" id="contentOffline">
+    <p><img src="status.php"></p>
+    <p>Wat fijn dat je ons helpt oefenen met chatten! Op dit moment zijn we <strong>offline</strong>. We proberen tijdens de testperiode in ieder geval online te zijn op dinsdag t/m vrijdag van 9:00 tot 17:00. </p>
+  </div>
+
+<script>
+  
+  //onload
+  fetch('status.php?json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    console.log("asdf",json);
+    window.chatStatus = json.status;
+  });
+
+  //click
+  $("#btnChat").click(function() {
+    $("#linkOpenChatWindow").trigger("click");
+  });
+
+  //click
+  $("#linkOpenChatWindow").click(function(event) {
+    $("#contentChat").hide();
+    window.open($(this).attr('href'),'_blank','height=400,width=730');
+    event.preventDefault();
+    return false;
+  });
+
+  //mouseover
+  $("#btnChat").mouseover(function() {
+    console.log(window.chatStatus);
+    if (window.chatStatus=="offline") {    
+      $("#contentOffline").show();
+    } else {
+      $("#contentChat").show();
+    }
+  });
+
+</script>
+
+</body>
+</html>

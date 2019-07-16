@@ -1,0 +1,79 @@
+body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1 {
+  font-size: 16px;
+}
+.greenbutton {
+  color: #3b8d7f;
+  background-color:#f5f5f5;
+  padding: 10px;
+  /*margin-top: 10px;*/
+  /*width: 150px;*/
+  white-space: nowrap;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.btnIcon {
+  background-color: white;
+  border: 1px solid #37b7a3;
+  border-radius: 7px;
+  position: absolute;
+  right: 15px;
+  
+  cursor: pointer;
+  padding: 3px;
+  padding-top: 6px;
+  padding-bottom: 0px;
+}
+
+#btnChat {
+  bottom: 15px;
+}
+
+#btnReserveren {
+  display: none;
+  bottom: 83px;
+}
+
+.content {
+  display:none;
+  background-color: white;
+  border: 1px solid #37b7a3;
+  padding: 10px;
+  position: absolute;
+  right: 85px;
+  bottom: 15px;
+}
+
+#contentReserveren {
+  bottom: 83px;
+}
+
+a, a:visited {
+  color: #e84b37;
+  }
+
+#contentChat p, #contentOffline p {
+  margin: 0px;
+}
+
+#contentOffline img {
+  margin-left: -8px;
+}

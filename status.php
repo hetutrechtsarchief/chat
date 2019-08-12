@@ -4,7 +4,7 @@
 // away,dnd,xa,
 // unavailable
 
-$usernames = [ "hjansen", "mieke", "r.companje", "anna", "mustafa", "reinier" ];
+$usernames = [ "hjansen", "mieke", "r.companje", "anna", "mustafa", "reinier", "nettie" ];
 shuffle($usernames);
 $users = [];
 foreach  ($usernames as $username) {

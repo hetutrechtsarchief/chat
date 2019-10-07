@@ -3,7 +3,7 @@
 <head>
   <title>Het Utrechts Archief</title>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="10; URL=?">
+  <!-- <meta http-equiv="refresh" content="10; URL=?"> -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css?">
 </head>
@@ -36,6 +36,11 @@
   .then(function(json) {
     console.log("asdf",json);
     window.chatStatus = json.status;
+  });
+
+  $(document).mouseleave(function() {
+    $("#contentOffline").hide();
+    $("#contentChat").hide();
   });
 
   //click

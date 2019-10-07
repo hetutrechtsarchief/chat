@@ -32,19 +32,20 @@ h1 {
 
 .btnIcon {
   background-color: white;
-  border: 1px solid #37b7a3;
+  border: 2px solid #37b7a3;
   border-radius: 7px;
   position: absolute;
-  right: 15px;
+  right: 0px;
   
   cursor: pointer;
-  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
   padding-top: 6px;
   padding-bottom: 0px;
 }
 
 #btnChat {
-  bottom: 15px;
+  bottom: 0px;
 }
 
 #btnReserveren {

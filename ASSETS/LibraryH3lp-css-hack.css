@@ -16,28 +16,33 @@ body {
   border: none !important;
 }
 
-#layout {
+#layout, html>body>div>div#recv {
   top: 75px;
   bottom: 6.7em;
-  border: 1px solid silver;
+  border: 1px solid silver !important;
   border-radius: 5px;
-  background-color: white;
+  background-color: white !important;
   padding: 8px;
 }
 
-#buttons {
+div#buttons {
   bottom: 6.3em;
+  margin-right: 50px;
 }
 
-#send {
+div#send {
   height: 3.5em;
   border-radius: 5px;
   border: none !important;
 }
 
-#send * {
-  width: 99% !important;
+#send img {
+  height: auto;
 }
+
+/*#send * {
+  width: 99% !important;
+}*/
 
 form {
   border: none;
@@ -51,12 +56,16 @@ textarea {
 }
 
 #recv button { /* clear chat history */
-  /*display: none;*/
+  display: none;
 }
 
 
 #presence[src='/presence/image/bluffton/available'] {
   content: url('https://hualab.nl/chat/status.php?available');
+}
+
+#presence::after {
+  content: " - Remember thisasdfa";
 }
 
 #presence[src='/presence/image/bluffton/chat'] {
@@ -91,5 +100,17 @@ textarea {
 
 #sounds .sprite {
   display: none !important;
+}
+
+#status #mail {
+display: none;
+}
+
+#presence {
+    float: none;
+}
+
+a#send-line img {
+  content: url('https://hualab.nl/chat/img/btnSend@2x.png');
 }
 

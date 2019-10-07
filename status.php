@@ -19,8 +19,8 @@ $current_status = "offline";
 
 
 //first check 'away's
-foreach ($users as $user) {
-  if ($user["status"]=="away" || $user["status"]=="dnd" || $user["status"]=="xa") {
+foreach ($users as $user) { //$user["status"]=="away" || 
+  if ($user["status"]=="dnd" || $user["status"]=="xa") {
     $current_username = $user["name"];
     $current_status = "away";
   }

@@ -13,34 +13,35 @@
     <img src="img/icon-chat.png?">
   </div>
 
-  <div class="content" id="contentChat">
-    <p>Wat fijn dat je ons helpt oefenen met chatten!</p>
-    <a id="linkOpenChatWindow" href="https://eu.libraryh3lp.com/chat/het-utrechts-archief@chat.eu.libraryh3lp.com?skin=15209" target="_blank">
+  <div id="chatContent">
+    <div id="contentOnline">
+      <p>Heeft u een vraag? Tussen 13.30 – 16.30 uur helpen wij u graag via chat!</p>
+      <a id="linkOpenChatWindow" href="#" target="_blank">
+        <p><img src="status.php"></p>
+        <p class="greenbutton">Stel uw vraag &gt;</p>
+      </a>
+    </div>
+
+    <div id="contentOffline">
       <p><img src="status.php"></p>
-      <p class="greenbutton">Stel je vraag &gt;</p>
-    </a>
+      <p>Van di t/m vrij 13.30-16.30 uur kunt u met ons chatten. Momenteel zijn we offline, stel uw vraag via <a href="mailto:inlichtingen@hetutrechtsarchief.nl">inlichtingen@hetutrechtsarchief.nl</a>.</p>
+    </div>
   </div>
 
-  <div class="content" id="contentOffline">
-    <p><img src="status.php"></p>
-    <p>Wat fijn dat je ons helpt oefenen met chatten! Op dit moment zijn we <strong>offline</strong>. We proberen tijdens de testperiode in ieder geval online te zijn op dinsdag t/m vrijdag van 9:00 tot 17:00. </p>
-  </div>
 
 <script>
-  
+
   //onload
   fetch('status.php?json')
   .then(function(response) {
     return response.json();
   })
   .then(function(json) {
-    console.log("asdf",json);
     window.chatStatus = json.status;
   });
 
   $(document).mouseleave(function() {
-    $("#contentOffline").hide();
-    $("#contentChat").hide();
+    $("#chatContent").hide();
   });
 
   //click
@@ -50,19 +51,29 @@
 
   //click
   $("#linkOpenChatWindow").click(function(event) {
-    $("#contentChat").hide();
-    window.open($(this).attr('href'),'_blank','height=400,width=730');
+    $("#chatContent").hide();
+    if (window.chatStatus=="online") {
+      var url = "https://eu.libraryh3lp.com/chat/het-utrechts-archief@chat.eu.libraryh3lp.com?skin=15209";
+      window.open(url,'_blank','height=400,width=730');
+    }
     event.preventDefault();
     return false;
   });
 
+  $("#chatContent").click(function(event) {
+      $("#chatContent").hide();
+  })
+
   //mouseover
   $("#btnChat").mouseover(function() {
-    console.log(window.chatStatus);
+    $("#chatContent").show();
+
     if (window.chatStatus=="offline") {    
+      $("#contentOnline").hide();
       $("#contentOffline").show();
     } else {
-      $("#contentChat").show();
+      $("#contentOffline").hide();
+      $("#contentOnline").show();
     }
   });
 

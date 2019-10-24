@@ -5,6 +5,11 @@ body {
 h1 {
   font-size: 16px;
 }
+
+a, a:visited {
+  color: #e84b37;
+}
+
 .greenbutton {
   color: #3b8d7f;
   background-color:#f5f5f5;
@@ -16,6 +21,7 @@ h1 {
   text-decoration: none;
   display: inline-block;
 }
+
 .row {
   display: flex;
   flex-direction: row;
@@ -53,7 +59,7 @@ h1 {
   bottom: 83px;
 }
 
-.content {
+#chatContent {
   display:none;
   background-color: white;
   border: 1px solid #37b7a3;
@@ -61,20 +67,24 @@ h1 {
   position: absolute;
   right: 85px;
   bottom: 15px;
+  width: 300px;
 }
 
-#contentReserveren {
-  bottom: 83px;
-}
-
-a, a:visited {
-  color: #e84b37;
+@media only screen and (max-width: 600px) {
+  #chatContent {
+    right: 0px;
+    bottom: 0px;
   }
+}
 
-#contentChat p, #contentOffline p {
+#contentOnline p, #contentOffline p {
   margin: 0px;
 }
 
 #contentOffline img {
   margin-left: -8px;
+}
+
+#contentReserveren {
+  bottom: 83px;
 }

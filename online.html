@@ -45,9 +45,9 @@
   });
 
   //click
-  $("#btnChat").click(function() {
-    $("#linkOpenChatWindow").trigger("click");
-  });
+  // $("#btnChat").click(function() {
+  //   $("#linkOpenChatWindow").trigger("click");
+  // });
 
   //click
   $("#linkOpenChatWindow").click(function(event) {
@@ -64,9 +64,11 @@
       $("#chatContent").hide();
   })
 
-  //mouseover
-  $("#btnChat").mouseover(function() {
+  //click (was: mouseover)
+  $("#btnChat").click(function() {
     $("#chatContent").show();
+    // console.log("send event",ga);
+    // ga('send', 'event', 'category', 'play', 'test');
 
     if (window.chatStatus=="offline") {    
       $("#contentOnline").hide();
@@ -78,6 +80,16 @@
   });
 
 </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29713183-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'UA-29713183-1');
+</script> -->
 
 </body>
 </html>

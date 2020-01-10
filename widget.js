@@ -14,4 +14,8 @@ $(document).ready(function() {
   if (!isSmallScreen) {
     $("div.chat").show();
   }
+
+  //Wanneer er een 404 pagina door MAIS MDWS wordt getoond wordt kan via onderstaande code de gebruiker doorverwezen worden naar de zoekpagina
+  $("body > div.site-content > div > div > div:nth-child(4)").append("<p>Mogelijk kunt u door te zoeken op <a style='text-decoration:underline' href='https://hetutrechtsarchief.nl/onderzoek/resultaten/archieven?mivast=39&miadt=39&mizig=0&miview=lst&mizk_alle="+(new URLSearchParams(window.location.search)).get("micode")+"'>"+(new URLSearchParams(window.location.search)).get("micode")+"</a> de gewenste pagina alsnog vinden.</p>")
+
 });

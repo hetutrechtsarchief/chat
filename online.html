@@ -11,6 +11,7 @@
 <body>
   <div class="btnIcon" id="btnChat">
     <img src="img/icon-chat.png?">
+    <span>Chat</span>
   </div>
 
   <div id="chatContent">
@@ -66,6 +67,7 @@
 
   //click (was: mouseover)
   $("#btnChat").click(function() {
+    fetch('open.php');
     $("#chatContent").show();
     // console.log("send event",ga);
     // ga('send', 'event', 'category', 'play', 'test');

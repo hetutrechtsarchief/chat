@@ -23,16 +23,28 @@ $(document).ready(function() {
   }
 
 
-  //dit is een experiment voor het testen van live zoek suggesties
-  // $('input[type="text"]').blur(function(e) {
-  //   if (!["","Zoek","Alle woorden","Alle velden"].includes($(e.target).val())) {
-  //     var params = {
-  //       q: $(e.target).val(),
-  //       id: $(e.target).attr("id"),
-  //       label: $('label[for='+  $(e.target).attr("id") +']').text()
-  //     }
-  //     var q = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-  //     fetch("https://hualab.nl/livesearch?" + q, {mode:'no-cors'});
+  // dit is versie 2 van een experiment voor het testen van live zoek suggesties
+  $('#searchall-term, #homepage-search-term').on("blur keypress", function(e) {
+    if (e.type === 'blur' || e.keyCode === 13) {
+      var params = {
+        q: $(e.target).val(),
+        id: $(e.target).attr("id")
+      }
+      var q = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+      fetch("https://hualab.nl/livesearch?" + q, {mode:'no-cors'});
+    }
+  });
+
+  // dit is versie 1 van een experiment voor het testen van live zoek suggesties
+    // if (["searchall-term","homepage-search-term"].includes($(e.target).attr('id'))) {
+    //   // if (!["","Zoek","Alle woorden","Alle velden"].includes($(e.target).val())) {
+    //   var params = {
+    //     q: $(e.target).val(),
+    //     id: $(e.target).attr("id"),
+    //     label: $('label[for='+  $(e.target).attr("id") +']').text()
+    //   }
+    //   var q = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+    //   fetch("https://hualab.nl/livesearch?" + q, {mode:'no-cors'});
   //   }
   // })
 

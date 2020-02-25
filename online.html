@@ -16,10 +16,12 @@
 
   <div id="chatContent">
     <div id="contentOnline">
-      <p>Heeft u een vraag? Tussen 13.30 – 16.30 uur helpen wij u graag via chat!</p>
+      <p id="msgVraag">Heeft u een vraag? Tussen 13.30 – 16.30 uur helpen wij u graag via chat!</p>
       <a id="linkOpenChatWindow" href="#" target="_blank">
         <p><img src="status.php"></p>
-        <p class="greenbutton">Stel uw vraag &gt;</p>
+        <p id="btnStelUwVraag" class="greenbutton">Stel uw vraag &gt;</p>
+      </a>
+      <p id="msgBusy">Op dit moment is het heel druk op de chat. Probeer het over een paar minuten nog eens óf stuur ons een mail: <a href="mailto:inlichtingen@hetutrechtsarchief.nl">inlichtingen@hetutrechtsarchief.nl</a>.</p>
       </a>
     </div>
 
@@ -39,6 +41,11 @@
   })
   .then(function(json) {
     window.chatStatus = json.status;
+    if (json.status=="away") {
+      $("#btnStelUwVraag").hide();
+      $("#msgVraag").hide();
+      $("#msgBusy").show();
+    }
   });
 
   $(document).mouseleave(function() {
@@ -53,7 +60,7 @@
   //click
   $("#linkOpenChatWindow").click(function(event) {
     $("#chatContent").hide();
-    if (window.chatStatus!="offline") {
+    if (window.chatStatus!="offline" && window.chatStatus!="away") {
       var url = "https://eu.libraryh3lp.com/chat/het-utrechts-archief@chat.eu.libraryh3lp.com?skin=15209";
       window.open(url,'_blank','height=400,width=730');
     }

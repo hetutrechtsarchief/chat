@@ -81,8 +81,6 @@
   $("#btnChat").click(function() {
     fetch('open.php');
     $("#chatContent").show();
-    // console.log("send event",ga);
-    // ga('send', 'event', 'category', 'play', 'test');
 
     if (window.chatStatus=="offline") {    
       $("#contentOnline").hide();
@@ -94,16 +92,6 @@
   });
 
 </script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29713183-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
- 
-  gtag('config', 'UA-29713183-1');
-</script> -->
 
 </body>
 </html>

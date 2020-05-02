@@ -1,4 +1,5 @@
 <?php
+// header("Set-Cookie: HttpOnly;Secure;SameSite=Strict");
 
 // available,chat
 // away,dnd,xa,

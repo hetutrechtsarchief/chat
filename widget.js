@@ -17,12 +17,6 @@ $(document).ready(function() {
     $("div.chat").show();
   }
 
-  //Wanneer er een 404 pagina door MAIS MDWS wordt getoond wordt kan via onderstaande code de gebruiker doorverwezen worden naar de zoekpagina
-  //  if (typeof mi_errormsg !== 'undefined') {
-  //   $("body > div.site-content > div > div > div:nth-child(4)").append("<p>Mogelijk kunt u door te zoeken op <a style='text-decoration:underline' href='https://hetutrechtsarchief.nl/onderzoek/resultaten/archieven?mivast=39&miadt=39&mizig=0&miview=lst&mizk_alle="+(new URLSearchParams(window.location.search)).get("micode")+"'>"+(new URLSearchParams(window.location.search)).get("micode")+"</a> de gewenste pagina alsnog vinden.</p>")
-  // }
-
-
   // dit is versie 2 van een experiment voor het testen van live zoek suggesties
   $('#searchall-term, #homepage-search-term').on("blur keypress", function(e) {
     if (e.type === 'blur' || e.keyCode === 13) {
@@ -35,17 +29,17 @@ $(document).ready(function() {
     }
   });
 
-  // dit is versie 1 van een experiment voor het testen van live zoek suggesties
-    // if (["searchall-term","homepage-search-term"].includes($(e.target).attr('id'))) {
-    //   // if (!["","Zoek","Alle woorden","Alle velden"].includes($(e.target).val())) {
-    //   var params = {
-    //     q: $(e.target).val(),
-    //     id: $(e.target).attr("id"),
-    //     label: $('label[for='+  $(e.target).attr("id") +']').text()
-    //   }
-    //   var q = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-    //   fetch("https://hualab.nl/livesearch?" + q, {mode:'no-cors'});
-  //   }
-  // })
+  // 2 mei 2020: dit is een HUALab experiment voor linken vanaf
+  // de Beeldbank van Het Utrechts Archief naar documentatie.org
+  setTimeout(function() {
+    var ids = { 64606:219219,64607:219209,818061:216417,35630:219175,35622:218971 }
+    var catnr = $("li.catalogusnummer span.metadata-content-text").text();
+    var udsId = ids[parseInt(catnr)];
+    if (udsId) {
+      $("<li><div class='metadata-heading'>Meer informatie</div><div>De gebouwen op deze afbeelding zijn geïndentificeerd en aanklikbaar gemaakt op <a target='_blank' href='http://www.documentatie.org/idUDSpagina.asp?id="+udsId+"'>documentatie.org</a>.</div></li>").insertAfter('li.uitleg_auteursrechten');
+    }
+    
+  },1000);
+
 
 });

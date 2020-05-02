@@ -36,7 +36,7 @@ $(document).ready(function() {
     var catnr = $("li.catalogusnummer span.metadata-content-text").text();
     var udsId = ids[parseInt(catnr)];
     if (udsId) {
-      $("<li><div class='metadata-heading'>Meer informatie</div><div>De gebouwen op deze afbeelding zijn geïndentificeerd en aanklikbaar gemaakt op <a target='_blank' href='http://www.documentatie.org/idUDSpagina.asp?id="+udsId+"'>documentatie.org</a>.</div></li>").insertAfter('li.uitleg_auteursrechten');
+      $("<li><div class='metadata-heading'>Meer informatie</div><div>De gebouwen op deze afbeelding zijn geïdentificeerd en aanklikbaar gemaakt op <a target='_blank' href='http://www.documentatie.org/idUDSpagina.asp?id="+udsId+"'>documentatie.org</a>.</div></li>").insertAfter('li.uitleg_auteursrechten');
     }
     
   },1000);

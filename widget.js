@@ -47,14 +47,11 @@ $(document).ready(function() {
     new MutationObserver(function(mutationsList,observer) { 
       for (let mutation of mutationsList) {
         if (mutation.target==document.querySelector(".mediabank-detail-metadata")) {
-          // console.log('test');
           createUDSlink();
         }
       }
     }).observe(document.querySelector(".mediabank-detail-panels"), { attributes: true, childList: true, subtree: true });
     
   },1000);
-
-  // console.log(document.querySelector(".mediabank-detail-panels"))
 
 });

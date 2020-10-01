@@ -44,13 +44,17 @@ $(document).ready(function() {
   setTimeout(function() {
     createUDSlink();
 
-    new MutationObserver(function(mutationsList,observer) { 
-      for (let mutation of mutationsList) {
-        if (mutation.target==document.querySelector(".mediabank-detail-metadata")) {
-          createUDSlink();
+    var panel = document.querySelector(".mediabank-detail-panels")
+
+    if (panel) {
+      new MutationObserver(function(mutationsList,observer) { 
+        for (let mutation of mutationsList) {
+          if (mutation.target==document.querySelector(".mediabank-detail-metadata")) {
+            createUDSlink();
+          }
         }
-      }
-    }).observe(document.querySelector(".mediabank-detail-panels"), { attributes: true, childList: true, subtree: true });
+      }).observe(panel, { attributes: true, childList: true, subtree: true });
+    }
     
   },1000);
 

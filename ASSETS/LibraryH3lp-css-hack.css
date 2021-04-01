@@ -64,9 +64,9 @@ textarea {
   content: url('https://hualab.nl/chat/status.php?available');
 }
 
-#presence::after {
+/*#presence::after {
   content: " - Remember thisasdfa";
-}
+}*/
 
 #presence[src='/presence/image/bluffton/chat'] {
   content: url('https://hualab.nl/chat/status.php?chat');
@@ -94,7 +94,7 @@ textarea {
 
 #sounds:after {
  content: "Stel hier uw vraag:";
-  color: #3b8d7f;
+  color: #247065;  /*was #3b8d7f;*/
   font-size: 16px;
 }
 

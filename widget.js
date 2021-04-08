@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('<div tabindex="0" class="chat" style="display: none; position:fixed; bottom: 0px; right:20px; z-index:600; width: 370px"><iframe tabindex="1" title="Chat" src="https://hualab.nl/chat/online.html?' + Math.random() + '" width="370" height="210"></iframe></div>').insertAfter("#topbar");
+  $('<div id="chatWidget" class="chat" style="display: none; position:fixed; bottom: 0px; right:20px; z-index:600; width: 370px"><iframe title="Chat" src="https://hualab.nl/chat/online.html?' + Math.random() + '" width="370" height="210"></iframe></div>').insertAfter("#topbar");
   $(".scroll-help__button").hide()
   $(".popup-container").css("left", "20px");
   $(".popup-container").css("width", "200px");
@@ -10,6 +10,8 @@ $(document).ready(function() {
   $(".popup-container .toggle").css("border-left", "2px solid #3fbfad");
   $(".popup-container .toggle").css("border-right", "2px solid #3fbfad");
   $(".popup-container .toggle").css("border-radius", "5px");
+
+  $('style').text("@media print { div#chatWidget { visibility: hidden; }}")
 
   var isSmallScreen = window.matchMedia('(max-width: 800px)').matches;
 

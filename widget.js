@@ -11,7 +11,7 @@ $(document).ready(function() {
   $(".popup-container .toggle").css("border-right", "2px solid #3fbfad");
   $(".popup-container .toggle").css("border-radius", "5px");
 
-  $('style').text("@media print { div#chatWidget { visibility: hidden; }}")
+  // $('style').text("@media print { div#chatWidget { visibility: hidden; }}")
 
   var isSmallScreen = window.matchMedia('(max-width: 800px)').matches;
 
@@ -20,14 +20,16 @@ $(document).ready(function() {
   }
 
   // dit is versie 2 van een experiment voor het testen van live zoek suggesties
-  $('#searchall-term, #homepage-search-term').on("blur keypress", function(e) {
+  $('#searchall-term, #homepage-search-term, #search-form_value, .mi_form input[type=text]').on("blur keypress", function(e) {
     if (e.type === 'blur' || e.keyCode === 13) {
       var params = {
         q: $(e.target).val(),
         id: $(e.target).attr("id")
       }
-      var q = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-      fetch("https://hualab.nl/livesearch?" + q, {mode:'no-cors'});
+      if (params.id!='miformtmp' && params.q!='') {
+        var q = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+        fetch("https://hualab.nl/livesearch/?" + q, {mode:'no-cors'});
+      }
     }
   });
 

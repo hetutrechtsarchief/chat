@@ -11,8 +11,10 @@ $(document).ready(function() {
   $(".popup-container .toggle").css("border-right", "2px solid #3fbfad");
   $(".popup-container .toggle").css("border-radius", "5px");
 
-  // $('style').text("@media print { div#chatWidget { visibility: hidden; }}")
+  //tmp fix 14-7-2021: hide the recent forum posts on bouwdossier page
+  $(".recent-discussions").hide();
 
+  //hide chat on small screens
   var isSmallScreen = window.matchMedia('(max-width: 800px)').matches;
 
   if (!isSmallScreen) {
@@ -47,5 +49,8 @@ $(document).ready(function() {
     }
     
   },1000);
+
+  //improve printable version of website. has unwanted side effects.
+  // $('style').text("@media print { div#chatWidget { visibility: hidden; }}")
 
 });
